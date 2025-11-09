@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>معهد الوادي - تفاصيل البرامج</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="header-top">مرحبًا بكم في عالم معهد الوادي</div>
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px">
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <div class="brand">معهد الوادي</div>
+    </div>
+    <nav id="mainNav" style="display:flex;gap:12px;align-items:center">
+      <a style="color:#fff;text-decoration:none" href="index.html">الرئيسية</a>
+      <a style="color:#fff;text-decoration:none" href="#products">البرامج</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="search">
+      <input type="search" id="searchBox" placeholder="ابحث عن برنامج..." oninput="filterProducts()" />
+      <div style="min-width:120px;text-align:center;padding:8px 12px;background:#fff;border-radius:24px;border:1px solid #eee">البرامج</div>
+    </div>
+
+    <section id="products" class="products">
+      <!-- Product 1 -->
+      <div class="product">
+        <img src="assets/24F80156-B6F9-44FA-AEF2-96B86D8C3B40.jpeg" alt="IFRS">
+        <h3>المحاسبة المالية الدولية (IFRS)</h3>
+        <p>مستويات: Basic / Standard / Premium</p>
+        <div class="price">$50 / $100 / $150</div>
+      </div>
+      <!-- Product 2 -->
+      <div class="product">
+        <img src="assets/24F80156-B6F9-44FA-AEF2-96B86D8C3B40.jpeg" alt="Excel">
+        <h3>تحليل البيانات المالية باستخدام Excel</h3>
+        <p>مهارات عملية وتقارير مالية متقدمة</p>
+        <div class="price">$50 / $90 / $140</div>
+      </div>
+      <!-- Product 3 -->
+      <div class="product">
+        <img src="assets/19A9AA20-5A0F-4ED0-AB05-1242961CC190.jpeg" alt="MBA">
+        <h3>إدارة الأعمال الاحترافية (Mini MBA)</h3>
+        <p>أساسيات الإدارة والتخطيط الاستراتيجي</p>
+        <div class="price">$75 / $120 / $150</div>
+      </div>
+      <!-- Product 4 -->
+      <div class="product">
+        <img src="assets/24F80156-B6F9-44FA-AEF2-96B86D8C3B40.jpeg" alt="SAP">
+        <h3>نظام SAP المالي (SAP FI)</h3>
+        <p>تطبيقات عملية على النظام المالي</p>
+        <div class="price">$80 / $120 / $150</div>
+      </div>
+      <!-- Product 5 -->
+      <div class="product">
+        <img src="assets/19A9AA20-5A0F-4ED0-AB05-1242961CC190.jpeg" alt="PowerBI">
+        <h3>مهارات Power BI للتحليل المالي</h3>
+        <p>تصوير وتحليل بيانات مالية احترافية</p>
+        <div class="price">$50 / $95 / $140</div>
+      </div>
+    </section>
+
+    <div class="footer">© معهد الوادي</div>
+  </main>
+
+  <a class="badge" href="https://wa.me/201034116422" target="_blank" title="واتساب">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 1C6.48 1 2 5.48 2 11c0 1.94.52 3.74 1.48 5.31L2 23l6.94-1.43A10.9 10.9 0 0 0 12 23c5.52 0 10-4.48 10-10 0-1.72-.4-3.34-1.48-4.52z" fill="#fff"/></svg>
+  </a>
+
+<script>
+function toggleMenu(){ var m=document.getElementById('mainNav'); m.style.display = (m.style.display==='none'||m.style.display==='')?'flex':'none'; }
+function filterProducts(){
+  var q = document.getElementById('searchBox').value.trim();
+  var cards = document.querySelectorAll('.product');
+  cards.forEach(function(c){
+    var txt = c.innerText.replace(/\s+/g,' ').toLowerCase();
+    c.style.display = txt.includes(q.toLowerCase()) ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>
